@@ -11,7 +11,7 @@ Get ready for fun! Follow instructions for real-time facial emotion recognition 
 Follow the [main file](fer_main.ipynb) for neural network training.
 
 Files Structure:
-- fer_main.ipynb - Tutorial to train the CNN
+- fer_main.ipynb - Main project file about the dataset and to train the CNN
 - fer_webcam.ipynb - Uses the pre-trained model to predict emotions via webcam
 - model.json - Neural network architecture
 - model.h5 - Trained model weights
@@ -38,21 +38,23 @@ No need to train from scratch! Just use fer_webcam.ipynb with pre-trained model.
 ### Method 2 : Start from scratch
 Let's get started with building the model from scratch! Follow these steps:
 
-Clone the repository using the command:  
+1. Clone the repository using the command:  
 ```
 https://github.com/ACM40960/project-22200226.git
 ```
 
-Download and extract the dataset from the Kaggle link: 
+2. Download and extract the dataset from the Kaggle link: 
 ```
 https://www.kaggle.com/datasets/ashishpatel26/facial-expression-recognitionferchallenge
 ```
-Download Haar Cascade classifier from this repository:
+This dataset comprises CSV files associating emotion labels with the corresponding pixel values of the given image. It encompasses 7 emotions/classes, namely Angry (0), Disgust (1), Fear (2), Happy (3), Sad (4), Surprise (5), and Neutral (6).
+
+3. Download Haar Cascade classifier from this repository:
 ```
 https://github.com/opencv/opencv/tree/master/data/haarcascades
 ```
 
-Run fer.ipynb and modify to your needs!
+4. Run fer_main.ipynb and modify to your needs!
 
 
 ## Analysis & Findings

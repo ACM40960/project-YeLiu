@@ -1,20 +1,26 @@
-# Facial Emotion Recognition
+# Facial Emotion Recognition (FER)
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Python](https://img.shields.io/badge/python-v3.11.4+-blue.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Introduction
+In this project, We create a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Neutrality. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
+
+The benefits of this project reach different areas. For example, in healthcare, it can help people with Alexithymia by making it easier for them to understand and show their emotions. It also has uses in public safety, education, jobs, and more.
+
 ## Getting Started
-Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam. Let's go! 🚀😃
+Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Anaconda environment. Let's go! 🚀😃
 
 ## Instructions
 Follow the [main file](fer_main.ipynb) for neural network training.
 
 Files Structure:
-- fer_main.ipynb - Main project file about the dataset and to train the CNN
-- fer_webcam.ipynb - Uses the pre-trained model to predict emotions via webcam
-- model.json - Neural network architecture
-- model.h5 - Trained model weights
+- [literature review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
+- [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
+- [fer_webcam.ipynb](fer_webcam.ipynb)- Uses the pre-trained model to predict emotions via webcam
+- [model.json](model.json) - Neural network architecture
+- [model.h5] - Trained model weights
 
 ## Prerequisites
 Install these prerequisites before proceeding:

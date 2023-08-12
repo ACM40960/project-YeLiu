@@ -109,8 +109,14 @@ The facial emotion recognition algorithm was adapted from the following sources:
 * [mayurmadnani](https://github.com/mayurmadnani/fer.git)
 * [greatsharma](https://github.com/greatsharma/Facial_Emotion_Recognition.git)
 
-## Authors
+## Contributors
 
 - [@ClementineSurya_22200226](https://github.com/ACM40960/project-22200226.git)
 
 - [@LiuYe_22200868](https://github.com/ACM40960/project-YeLiu.git)
+
+*For Inquiry:*\
+If you have any questions with this project, feel free to reach out to us. You can contact us at:
+* [suryaclementine@gmail.com](mailto:suryaclementine@gmail.com)
+* [liuyeirtj@gmail.com](mailto:liuyeirtj@gmail.com)
+

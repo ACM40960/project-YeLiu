@@ -4,7 +4,7 @@
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
 ## Introduction
-In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happiness, Sadness, Surprise, and Neutrality. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
+In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happy, Sad, Surprise, and Neutral. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
 
 The benefits of this project reach different areas. For example, in healthcare, it can help people with Alexithymia by making it easier for them to understand and show their emotions. It also has uses in public safety, education, jobs, and more.
 

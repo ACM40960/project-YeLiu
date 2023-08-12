@@ -16,9 +16,10 @@ Follow the [main file](fer_main.ipynb) for neural network training. Files Struct
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
 - [model.json](model.json) - Neural network architecture
-- [model.h5] - Trained model weights
+- [model.h5](model.h5) - Trained model weights
 - [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
 - CNN Visualization folder - Source code for generating visual representation of CNN architecture (created using LaTeX format)
+- [gitattributes](gitattributes) - Source code to upload large file to Github (to be ignored)
 
 ## Prerequisites
 Install these prerequisites before proceeding:

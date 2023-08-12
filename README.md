@@ -3,6 +3,15 @@
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+
+
+![ezgif com-video-to-gif](https://github.com/ACM40960/project-22200226/assets/114998243/c9af3c5c-41ad-4d99-acd9-4758b4a4972a)
+
+
+
+
+
+
 ## Introduction
 In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happy, Sad, Surprise, and Neutral. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
 

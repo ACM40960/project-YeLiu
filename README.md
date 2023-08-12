@@ -50,11 +50,12 @@ Let's get started with building the model from scratch! Follow these steps:
 https://github.com/ACM40960/project-22200226.git
 ```
 
-2. Download and extract the dataset from the Kaggle link: 
+2. Download and extract the FER2013 dataset from the Kaggle link: 
 ```
 https://www.kaggle.com/datasets/ashishpatel26/facial-expression-recognitionferchallenge
 ```
-This dataset comprises CSV files associating emotion labels with the corresponding pixel values of the given image. It encompasses 7 emotions/classes, namely Angry (0), Disgust (1), Fear (2), Happy (3), Sad (4), Surprise (5), and Neutral (6).
+
+This dataset contains 35,887 facial image extracts where emotion labels are linked to the corresponding pixel values in each image. It covers 7 distinct emotions/classes: Angry (0), Disgust (1), Fear (2), Happy (3), Sad (4), Surprise (5), and Neutral (6). The dataset is split into sections for training, validation, and testing purposes. All images are in grayscale and have dimensions of 48 x 48 pixels.
 
 3. Download Haar Cascade classifier from this repository:
 ```

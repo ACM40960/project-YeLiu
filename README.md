@@ -8,19 +8,17 @@ In this project, we build a Convolutional Neural Network (CNN) model with the ab
 
 The benefits of this project reach different areas. For example, in healthcare, it can help people with Alexithymia by making it easier for them to understand and show their emotions. It also has uses in public safety, education, jobs, and more.
 
-## Getting Started
+## Getting Started - Instructions
 Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Anaconda environment. Let's go! 🚀😃
 
-## Instructions
-Follow the [main file](fer_main.ipynb) for neural network training.
-
-Files Structure:
-- [literature review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
+Follow the [main file](fer_main.ipynb) for neural network training. Files Structure:
 - [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
 - [model.json](model.json) - Neural network architecture
 - [model.h5] - Trained model weights
+- [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
+- CNN Visualization folder - Source code for generating visual representation of CNN architecture (created using LaTeX format)
 
 ## Prerequisites
 Install these prerequisites before proceeding:
@@ -63,11 +61,11 @@ https://github.com/opencv/opencv/tree/master/data/haarcascades
 4. Run fer_main.ipynb and modify to your needs!
 
 
-## Analysis & Findings
+## Our Analysis & Findings
 The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Disgust' is minority. 
 ![newplot 20 22 41](https://github.com/ACM40960/project-22200226/assets/114998243/e2264db8-3437-4e9f-ba6c-3f169085ff20)
 
-### Our CNN Build Model and Model Summary
+### CNN Build Model and Model Summary
 > :rocket: **Alert!** Buckle up, because the training process for our model takes around *14.1 hours*! :hourglass_flowing_sand:
 * Utilizes 6 convolutional layers.
 * Images resized to 48 x 48 before entering the first convolutional layer.
@@ -87,7 +85,7 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 1. Confusion Matrix
 ![confusion_matrix](https://github.com/ACM40960/project-22200226/assets/114998243/2995ba89-eb20-448c-95c1-c6ccdb2ea341)
 
-2. Classification Report 
+2. Classification Report
 
 | Classes       | Precision | Sensitivity (Recall) | Specificity | F1 Score | Accuracy |
 | ------------- | --------- | -------------------- | ----------- | -------- | -------- |
@@ -98,6 +96,9 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 | 4 - Neutral   | 0.571     | 0.539                | 0.920       | 0.555    | 0.857    |
 | 5 - Sad       | 0.784     | 0.793                | 0.971       | 0.789    | 0.951    |
 | 6 - Surprise  | 0.610     | 0.759                | 0.897       | 0.676    | 0.837    |
+
+**Overall Accuracy = 69.16%**\
+Based on the performance metrics, the emotion category with the highest overall performance is "Happy". This category exhibits both high precision, recall, and F1-score while the lowest performing emotion category is "Disgust". While the model demonstrates a moderate precision, the recall and F1-score are relatively low. This could be because there are very few samples available for this category.
 
 
 *Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while our own model attained an accuracy of 69.16%.*

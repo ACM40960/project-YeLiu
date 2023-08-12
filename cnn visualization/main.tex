@@ -1,0 +1,72 @@
+\documentclass[border=15pt, multi, tikz]{standalone}
+\usepackage{import}
+\subimport{./layers/}{init}
+\usetikzlibrary{positioning}
+\usetikzlibrary{3d} %for including external image 
+
+\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,1;black,0.3}
+\def\DcnvColor{rgb:blue,5;green,2.5;white,5}
+\def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\SumColor{rgb:blue,5;green,15}
+
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside down},draw=\edgecolor,opacity=0.7]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Draw Layer Blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\node[canvas is zy plane at x=0] (temp) at (-3,0,0) {\includegraphics[width=8cm,height=8cm]{happy_test1.jpeg}};
+
+% conv1_1,conv1_2,pool1
+\pic[shift={(0,0,0)}] at (0,0,0) {RightBandedBox={name=cr1,caption=conv1,%
+        xlabel={{"64","64"}},zlabel=I,fill=\ConvColor,bandfill=\ConvReluColor,%
+        height=40,width={2,2},depth=40}};
+\pic[shift={(0,0,0)}] at (cr1-east) {Box={name=p1,%
+    fill=\PoolColor,opacity=0.5,height=35,width=1,depth=35}};
+        
+% conv2_1,conv2_2,pool2
+\pic[shift={(2,0,0)}] at (p1-east) {RightBandedBox={name=cr2,caption=conv2,%
+        xlabel={{"128","128"}},zlabel=I/2,fill=\ConvColor,bandfill=\ConvReluColor,%
+        height=35,width={3,3},depth=35}};
+\pic[shift={(0,0,0)}] at (cr2-east) {Box={name=p2,%
+        fill=\PoolColor,opacity=0.5,height=30,width=1,depth=30}};
+        
+% conv3_1,conv3_2,pool3
+\pic[shift={(2,0,0)}] at (p2-east) {RightBandedBox={name=cr3,caption=conv3,%
+        xlabel={{"256","256"}},zlabel=I/4,fill=\ConvColor,bandfill=\ConvReluColor,%
+        height=30,width={4,4},depth=30}};
+\pic[shift={(0,0,0)}] at (cr3-east) {Box={name=p3,%
+        fill=\PoolColor,opacity=0.5,height=23,width=1,depth=23}};
+
+%% fully connected layer
+\pic[shift={(1.8,0,0)}] at (p3-east) {RightBandedBox={name=fc,caption=fc,%
+        xlabel={{"256","256"}},fill=\ConvColor,bandfill=\ConvReluColor,%
+        height=20,width={1},depth=1}}; 
+        
+%% fully connected layer
+\pic[shift={(1.8,0,0)}] at (p3-east) {RightBandedBox={name=fc,caption=fc,%
+        xlabel={{"256","256"}},fill=\ConvColor,bandfill=\ConvReluColor,%
+        height=20,width={1},depth=1}}; 
+
+% output layer
+\pic[shift={(1.5,0,0)}] at (fc-east) {RightBandedBox={name=output,caption=output,
+    xlabel={"6","6"},fill=\ConvColor,bandfill=\ConvReluColor,
+    height=5,width={1},depth=1}};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Draw Connections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Connection conv1 to conv2
+\draw [connection] (cr1-east) -- node {\midarrow} (cr2-west);
+% Connection conv2 to conv3
+\draw [connection] (cr2-east) -- node {\midarrow} (cr3-west);
+% Connection conv3 to fully connected layer
+\draw [connection] (cr3-east) -- node {\midarrow} (fc-west);
+% Connection fully connected layer to output layer
+\draw [connection] (fc-east) -- node {\midarrow} (output-west);
+
+\end{tikzpicture}
+\end{document}

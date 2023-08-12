@@ -1,16 +1,9 @@
-# Facial Emotion Recognition (FER)
+# Facial Emotion Recognition (FER) using Convolution Neural Networks
 ![Python](https://img.shields.io/badge/python-v3.11.4+-blue.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
-
-
 ![ezgif com-video-to-gif](https://github.com/ACM40960/project-22200226/assets/114998243/c9af3c5c-41ad-4d99-acd9-4758b4a4972a)
-
-
-
-
-
 
 ## Introduction
 In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happy, Sad, Surprise, and Neutral. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
@@ -18,7 +11,7 @@ In this project, we build a Convolutional Neural Network (CNN) model with the ab
 The benefits of this project reach different areas. For example, in healthcare, it can help people with Alexithymia by making it easier for them to understand and show their emotions. It also has uses in public safety, education, jobs, and more.
 
 ## Getting Started - Instructions
-Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Anaconda environment. Let's go! 🚀😃
+Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Jupyter Notebook (Anaconda). Let's go! 🚀😃
 
 Follow the [main file](fer_main.ipynb) for neural network training. Files Structure:
 - [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
@@ -73,7 +66,8 @@ https://github.com/opencv/opencv/tree/master/data/haarcascades
 
 ## Our Analysis & Findings
 The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Disgust' is minority. 
-![newplot 20 22 41](https://github.com/ACM40960/project-22200226/assets/114998243/e2264db8-3437-4e9f-ba6c-3f169085ff20)
+<img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
+
 
 ### CNN Build Model and Model Summary
 > :rocket: **Alert!** Buckle up, because the training process for our model takes around *14.1 hours*! :hourglass_flowing_sand:

@@ -64,7 +64,10 @@ This dataset contains 35,887 facial image extracts where emotion labels are link
 
 ## Our Work
 ### Methodology
-![final_process](https://github.com/ACM40960/project-22200226/assets/114998243/ea981b2d-bc00-46ec-99da-fcc859fa7968)
+
+
+![image](https://github.com/ACM40960/project-22200226/assets/114998243/cb2da4f9-88c0-458c-bde0-8d6dffbc0103)
+
 
 For the real-time facial expression recognition, we employed the **Haar Cascade classifier**, a feature-based object detection algorithm, implemented through **OpenCV**. This approach allowed us to detect faces in live video streams from the laptop's webcam. Subsequently, the selected CNN model was applied to recognize facial expressions in real-time, providing instantaneous emotion detection.
 

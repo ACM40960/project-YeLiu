@@ -17,7 +17,7 @@ Follow the [main file](fer_main.ipynb) for neural network training. Files Struct
 - [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
-  (we obtain this from this [link](https://github.com/opencv/opencv/tree/master/data/haarcascades))
+  (we obtain this from this [repository](https://github.com/opencv/opencv/tree/master/data/haarcascades))
 - [model_final.json](model_final.json) - Neural network architecture
 - [weights_final.h5](weights_final.h5) - Trained model weights
 - [requirements.txt](requirements.txt) - Version of each dependency

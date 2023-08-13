@@ -17,11 +17,12 @@ Follow the [main file](fer_main.ipynb) for neural network training. Files Struct
 - [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
-- [model.json](model.json) - Neural network architecture
-- [model.h5](model.h5) - Trained model weights
+  (we obtain this from this [link](https://github.com/opencv/opencv/tree/master/data/haarcascades))
+- [model_final.json](model_final.json) - Neural network architecture
+- [weights_final.h5](weights_final.h5) - Trained model weights
 - [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
 - CNN Visualization folder - Source code for generating visual representation of CNN architecture (created using LaTeX format)
-- [gitattributes](gitattributes) - Source code to upload large file to Github (to be ignored)
+- [gitattributes](gitattributes) - Source code to upload large file more than 25mb to Github (to be ignored)
 
 ## Prerequisites
 Install these prerequisites before proceeding:
@@ -40,7 +41,7 @@ pip3 install opencv-python
 
 ### Method 1 : Using the built model 
 
-No need to train from scratch! Just use fer_webcam.ipynb with pre-trained model.json and model.h5 to predict facial emotions real time on your webcam. Customize it for your needs! 🤩
+No need to train from scratch! Just use [fer_webcam.ipynb](fer_webcam.ipynb) with pre-trained [model_final.json](model_final.json) and [weights_final.h5](weights_final.h5) to predict facial emotions real time on your webcam. Customize it for your needs! 🤩
 
 ### Method 2 : Start from scratch
 Let's get started with building the model from scratch! Follow these steps:
@@ -57,67 +58,87 @@ https://www.kaggle.com/datasets/ashishpatel26/facial-expression-recognitionferch
 
 This dataset contains 35,887 facial image extracts where emotion labels are linked to the corresponding pixel values in each image. It covers 7 distinct emotions/classes: Angry (0), Disgust (1), Fear (2), Happy (3), Sad (4), Surprise (5), and Neutral (6). The dataset is split into sections for training, validation, and testing purposes. All images are in grayscale and have dimensions of 48 x 48 pixels.
 
-3. Download Haar Cascade classifier from this repository:
-```
-https://github.com/opencv/opencv/tree/master/data/haarcascades
-```
-
-4. Run fer_main.ipynb and modify to your needs!
+4. Run [fer_main.ipynb](fer_main.ipynb) and modify to your needs!
 
 
-## Our Analysis & Findings
+## Our Work
+### Methodology
+![final_process](https://github.com/ACM40960/project-22200226/assets/114998243/ea981b2d-bc00-46ec-99da-fcc859fa7968)
+
+For the real-time facial expression recognition, we employed the **Haar Cascade classifier**, a feature-based object detection algorithm, implemented through **OpenCV**. This approach allowed us to detect faces in live video streams from the laptop's webcam. Subsequently, the selected CNN model was applied to recognize facial expressions in real-time, providing instantaneous emotion detection.
+
+### Analysis & Findings
 The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Disgust' is minority. 
 <img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
 
-
 ### CNN Build Model and Model Summary
-> :rocket: **Alert!** Buckle up, because the training process for our model takes around *14.1 hours*! :hourglass_flowing_sand:
-* Utilizes 6 convolutional layers.
-* Images resized to 48 x 48 before entering the first convolutional layer.
+> :rocket: **Alert!** Buckle up, because the training process for our model takes around *16.39 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor) 
+* Images resized to 48 x 48 and normalized before entering the first convolutional layer.
 * Data augmentation techniques (such as rotations, shifts, and flips) are employed to enhance the model's ability to generalize
-* Feature maps from convolutional layers go through Exponential Linear Unit (ELU) activation function.
-* Includes batch normalization, dropout layers, early stopping, and ReduceLROnPlateau callback to counter overfitting.
+* Utilizes 6 convolutional layers. 
+* Includes Batch Normalization and Dropout Layers after each convolution layers, Early Stopping, and ReduceLROnPlateau callback to counter overfitting.
+* Feature maps from convolutional layers go through Exponential Linear Unit (ELU) activation function with HeNormal kernel initializer.
 * Output layer contains 7 units to classify the 7 emotion classes.
 * Output layer uses softmax activation function for probabilistic class outputs.
+* Loss function using categorical cross-entropy.
+* Batch size: 32, Epochs: 100.
 * Optimizer: Nesterov-accelerated Adaptive Moment Estimation (Nadam), which combines Adam and Nesterov Momentum.
 
-<img width="893" alt="Screenshot 2023-08-11 at 19 48 45" src="https://github.com/ACM40960/project-22200226/assets/114998243/2649b795-8765-429c-9eb4-4187c2fe39ac">
+![CNN_Model_Final (1)](https://github.com/ACM40960/project-22200226/assets/114998243/3ceeb86a-7bc9-4b44-84f6-c1baca9f50a7)
+
 
 ![image](https://github.com/ACM40960/project-22200226/assets/114998243/d9ea45b0-c369-49d6-be73-110f55983187)
 
 
 ### Model Evaluation
-1. Confusion Matrix
+1. **Training vs Validation Loss & Accuracy** - As we follow the epochs, we notice accuracy getting better step by step, hitting about 70% around 70 epochs for both the training and validation data. Beyond this point, we can see the indications of overfitting.
+
+
+   <img width="792" alt="Screenshot 2023-08-13 at 13 53 49" src="https://github.com/ACM40960/project-22200226/assets/114998243/e43b91ea-6119-44f2-b533-688193873db4">
+
+
+
+2. **Confusion Matrix** - Model evaluation on the test set
+
+  
 ![confusion_matrix](https://github.com/ACM40960/project-22200226/assets/114998243/2995ba89-eb20-448c-95c1-c6ccdb2ea341)
 
-2. Classification Report
+3. **Classification Report** - Model evaluation on the test set
+   
 
 | Classes       | Precision | Sensitivity (Recall) | Specificity | F1 Score | Accuracy |
 | ------------- | --------- | -------------------- | ----------- | -------- | -------- |
-| 0 - Anger     | 0.604     | 0.646                | 0.933       | 0.624    | 0.894    |
-| 1 - Disgust   | 0.750     | 0.436                | 0.998       | 0.552    | 0.989    |
-| 2 - Fear      | 0.592     | 0.422                | 0.950       | 0.493    | 0.872    |
-| 3 - Happy     | 0.886     | 0.902                | 0.962       | 0.894    | 0.948    |
-| 4 - Neutral   | 0.571     | 0.539                | 0.920       | 0.555    | 0.857    |
-| 5 - Sad       | 0.784     | 0.793                | 0.971       | 0.789    | 0.951    |
-| 6 - Surprise  | 0.610     | 0.759                | 0.897       | 0.676    | 0.837    |
+| 0 - Anger     | 0.570     | 0.658                | 0.921       | 0.611    | 0.885    |
+| 1 - Disgust   | 0.833     | 0.545                | 0.998       | 0.659    | 0.991    |
+| 2 - Fear      | 0.584     | 0.439                | 0.946       | 0.502    | 0.872    |
+| 3 - Happy     | 0.895     | 0.895                | 0.966       | 0.895    | 0.949    |
+| 4 - Neutral   | 0.594     | 0.544                | 0.926       | 0.568    | 0.863    |
+| 5 - Sad       | 0.799     | 0.767                | 0.975       | 0.783    | 0.951    |
+| 6 - Surprise  | 0.615     | 0.754                | 0.900       | 0.678    | 0.875    |
 
-**Overall Accuracy = 69.16%**\
-Based on the performance metrics, the emotion category with the highest overall performance is "Happy". This category exhibits both high precision, recall, and F1-score while the lowest performing emotion category is "Disgust". While the model demonstrates a moderate precision, the recall and F1-score are relatively low. This could be because there are very few samples available for this category.
+> **Overall Accuracy = 69.27%**
 
+4. **One-VS-Rest Multiclass ROC** - Model evaluation on the test set
 
-*Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while our own model attained an accuracy of 69.16%.*
+<img width="488" alt="Screenshot 2023-08-13 at 13 55 30" src="https://github.com/ACM40960/project-22200226/assets/114998243/56dead64-5f6d-4812-bf36-0e888fabcd49">
 
-## Credits
+### Conclusion
+The model's performance on the test set achieves an overall accuracy of approximately 69.3%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Neutral". This is also true in real life – detecting the "Fear" emotion is not easy.
+
+To further enhance the model's effectiveness, future endeavors could concentrate on addressing the class imbalance issue. Possible ways to enhance the model include exploring transfer learning methods with pre-trained models, which could lead to better accuracy. Also, expanding the dataset to include more varied examples could significantly improve the model's ability to work well in different real-life situations.
+
+*Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while our own model attained an accuracy of **69.27%**.*
+
+## Acknowledgments
 The facial emotion recognition algorithm was adapted from the following sources:
 * [mayurmadnani](https://github.com/mayurmadnani/fer.git)
 * [greatsharma](https://github.com/greatsharma/Facial_Emotion_Recognition.git)
 
 ## Authors
 
-- [@ClementineSurya_22200226](https://github.com/ACM40960/project-22200226.git)
+- [Clementine Surya - 22200226](https://github.com/ACM40960/project-22200226.git)
 
-- [@LiuYe_22200868](https://github.com/ACM40960/project-YeLiu.git)
+- [Liu Ye - 22200868](https://github.com/ACM40960/project-YeLiu.git)
 
 *For Inquiry:*\
 If you have any questions with this project, feel free to reach out to us. You can contact us at:

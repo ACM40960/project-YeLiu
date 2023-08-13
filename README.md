@@ -20,6 +20,7 @@ Follow the [main file](fer_main.ipynb) for neural network training. Files Struct
   (we obtain this from this [link](https://github.com/opencv/opencv/tree/master/data/haarcascades))
 - [model_final.json](model_final.json) - Neural network architecture
 - [weights_final.h5](weights_final.h5) - Trained model weights
+- [requirements.txt](requirements.txt) - Version of each dependency
 - [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
 - CNN Visualization folder - Source code for generating visual representation of CNN architecture (created using LaTeX format)
 - [gitattributes](gitattributes) - Source code to upload large file more than 25mb to Github (to be ignored)

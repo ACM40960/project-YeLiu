@@ -52,14 +52,11 @@ Let's get started with building the model from scratch! Follow these steps:
 https://github.com/ACM40960/project-22200226.git
 ```
 
-2. Download and extract the FER2013 dataset from the Kaggle link: 
-```
-https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge
-```
+2. Download and extract [FER2013 dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge).
 
 This dataset contains 35,887 facial image extracts where emotion labels are linked to the corresponding pixel values in each image. It covers 7 distinct emotions/classes: Angry (0), Disgust (1), Fear (2), Happy (3), Sad (4), Surprise (5), and Neutral (6). The dataset is split into sections for training, validation, and testing purposes. All images are in grayscale and have dimensions of 48 x 48 pixels.
 
-4. Run [fer_main.ipynb](fer_main.ipynb) and modify to your needs!
+3. Run [fer_main.ipynb](fer_main.ipynb) and modify to your needs!
 
 
 ## Our Work
@@ -144,13 +141,12 @@ The facial emotion recognition algorithm was adapted from the following sources:
 * [greatsharma](https://github.com/greatsharma/Facial_Emotion_Recognition.git)
 
 ## Authors
+If you have any questions with this project, feel free to reach out to us at:
 
-- [Clementine Surya - 22200226](https://github.com/ACM40960/project-22200226.git)
+- [Clementine Surya - 22200226](https://github.com/ACM40960/project-22200226.git) - [clementine.surya@ucdconnect.ie](mailto:clementine.surya@ucdconnect.ie)
 
-- [Liu Ye - 22200868](https://github.com/ACM40960/project-YeLiu.git)
+- [Liu Ye - 22200868](https://github.com/ACM40960/project-YeLiu.git) - [ye.liu1@ucdconnect.ie](mailto:ye.liu1@ucdconnect.ie)
 
-*For Inquiry:*\
-If you have any questions with this project, feel free to reach out to us. You can contact us at:
-* [suryaclementine@gmail.com](mailto:suryaclementine@gmail.com)
-* [liuyeirtj@gmail.com](mailto:liuyeirtj@gmail.com)
+
+
 

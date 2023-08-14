@@ -14,7 +14,7 @@ The benefits of this project reach different areas. For example, in healthcare, 
 Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Jupyter Notebook (Anaconda). Let's go! 🚀😃
 
 Follow the [main file](fer_main.ipynb) for neural network training. Files Structure:
-- [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset and to train the CNN
+- [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset, train the CNN, and analysis
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
   (we obtain this from this [repository](https://github.com/opencv/opencv/tree/master/data/haarcascades))

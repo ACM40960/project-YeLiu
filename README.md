@@ -96,7 +96,7 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 
 
 ### Model Evaluation
-1. **Training vs Validation Loss & Accuracy** - As we follow the epochs, we notice accuracy getting better step by step, hitting about 70% around 70 epochs for both the training and validation data. Beyond this point, we can see the indications of overfitting.
+1. **Training vs Validation Loss & Accuracy** - Progressively improving, the model reaches ~0.95 for loss and ~70% accuracy at around 60 to 70 epochs. However, beyond this, signs of overfitting start to emerge.
 
 
    <img width="792" alt="Screenshot 2023-08-13 at 13 53 49" src="https://github.com/ACM40960/project-22200226/assets/114998243/e43b91ea-6119-44f2-b533-688193873db4">

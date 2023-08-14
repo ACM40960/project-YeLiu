@@ -77,7 +77,7 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 
 ### CNN Build Model and Model Summary
 > :rocket: **Alert!** Buckle up, because the training process for our model takes around *16.39 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor) 
-* Images resized to 48 x 48 and normalized before entering the first convolutional layer.
+* Images reshaped to 48 x 48 and normalized before entering the first convolutional layer.
 * Data augmentation techniques (such as rotations, shifts, and flips) are employed to enhance the model's ability to generalize
 * Utilizes 6 convolutional layers. 
 * Includes Batch Normalization and Dropout Layers after each convolution layers, Early Stopping, and ReduceLROnPlateau callback to counter overfitting.
@@ -88,7 +88,8 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 * Batch size: 32, Epochs: 100.
 * Optimizer: Nesterov-accelerated Adaptive Moment Estimation (Nadam), which combines Adam and Nesterov Momentum.
 
-![CNN_Model_Final (1)](https://github.com/ACM40960/project-22200226/assets/114998243/3ceeb86a-7bc9-4b44-84f6-c1baca9f50a7)
+<img width="667" alt="cnn visualization" src="https://github.com/ACM40960/project-22200226/assets/114998243/33c4698a-be55-4e8f-ae1a-425f94f514d0">
+
 
 
 ![image](https://github.com/ACM40960/project-22200226/assets/114998243/d9ea45b0-c369-49d6-be73-110f55983187)
@@ -102,12 +103,14 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 
 
 
-2. **Confusion Matrix** - Model evaluation on the test set
+2. **Normalized Confusion Matrix** - Model Evaluation on the Test Set\
+Disgust images frequently predicted as Anger. Notably, Happy demonstrated exceptional classification performance, with 787 accurate predictions across all images, the highest among all emotion categories. 
 
-  
-![confusion_matrix](https://github.com/ACM40960/project-22200226/assets/114998243/2995ba89-eb20-448c-95c1-c6ccdb2ea341)
+  <img width="665" alt="Screenshot 2023-08-14 at 06 47 47" src="https://github.com/ACM40960/project-22200226/assets/114998243/ee0dc241-10f8-4721-b7e9-ca79464e79a9">
 
-3. **Classification Report** - Model evaluation on the test set
+
+
+3. **Classification Report** - Model Evaluation on the Test Set
    
 
 | Classes       | Precision | Sensitivity (Recall) | Specificity | F1 Score | Accuracy |
@@ -122,14 +125,15 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 
 > **Overall Accuracy = 69.27%**
 
-4. **One-VS-Rest Multiclass ROC** - Model evaluation on the test set
+4. **One-VS-Rest Multiclass ROC** - Model Evaluation on the Test Set
 
 <img width="488" alt="Screenshot 2023-08-13 at 13 55 30" src="https://github.com/ACM40960/project-22200226/assets/114998243/56dead64-5f6d-4812-bf36-0e888fabcd49">
 
 ### Conclusion
 The model's performance on the test set achieves an overall accuracy of approximately 69.3%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Neutral". This is also true in real life – detecting the "Fear" emotion is not easy.
 
-To further enhance the model's effectiveness, future endeavors could concentrate on addressing the class imbalance issue. Possible ways to enhance the model include exploring transfer learning methods with pre-trained models, which could lead to better accuracy. Also, expanding the dataset to include more varied examples could significantly improve the model's ability to work well in different real-life situations.
+### Future Work
+Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities.
 
 *Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while our own model attained an accuracy of **69.27%**.*
 

@@ -104,9 +104,10 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 
 
 2. **Normalized Confusion Matrix** - Model Evaluation on the Test Set\
-Disgust images frequently predicted as Anger. Notably, Happy demonstrated exceptional classification performance, with 787 accurate predictions across all images, the highest among all emotion categories. 
+Disgust images frequently predicted as Anger. Notably, Happy demonstrated exceptional classification performance, with 787 accurate predictions across all images, the highest among all emotion categories.
 
-  <img width="665" alt="Screenshot 2023-08-14 at 06 47 47" src="https://github.com/ACM40960/project-22200226/assets/114998243/ee0dc241-10f8-4721-b7e9-ca79464e79a9">
+
+<img width="663" alt="Screenshot 2023-08-14 at 09 59 21" src="https://github.com/ACM40960/project-22200226/assets/114998243/5f897314-531e-459d-9ce0-f4d5f8f6050d">
 
 
 
@@ -130,7 +131,7 @@ Disgust images frequently predicted as Anger. Notably, Happy demonstrated except
 <img width="488" alt="Screenshot 2023-08-13 at 13 55 30" src="https://github.com/ACM40960/project-22200226/assets/114998243/56dead64-5f6d-4812-bf36-0e888fabcd49">
 
 ### Conclusion
-The model's performance on the test set achieves an overall accuracy of approximately 69.3%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Neutral". This is also true in real life – detecting the "Fear" emotion is not easy.
+The model's performance on the test set achieves an overall accuracy of approximately 69.3%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Sad". This is also true in real life – detecting the "Fear" emotion is not easy.
 
 ### Future Work
 Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities.

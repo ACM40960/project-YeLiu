@@ -3,7 +3,8 @@
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
-![ezgif com-video-to-gif](https://github.com/ACM40960/project-22200226/assets/114998243/c9af3c5c-41ad-4d99-acd9-4758b4a4972a)
+![ezgif com-crop](https://github.com/ACM40960/project-22200226/assets/114998243/8e0d0e6a-a864-4616-9b60-b7a16abd7937)
+
 
 ## Introduction
 In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happy, Sad, Surprise, and Neutral. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
@@ -133,7 +134,7 @@ The model's performance on the test set achieves an overall accuracy of approxim
 ### Future Work
 Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities.
 
-*Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while our own model attained an accuracy of **69.27%**.*
+*Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while this model attained an accuracy of **69.27%**.*
 
 ## Acknowledgments
 The facial emotion recognition algorithm was adapted from the following sources:

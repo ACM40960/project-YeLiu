@@ -74,7 +74,7 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 <img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
 
 ### CNN Build Model and Model Summary
-> :rocket: **Alert!** Buckle up, because the training process for our model takes around *6.37 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor)\
+> :rocket: **Alert!** Buckle up, because the training process for our model takes around *6.37 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor)
 
 Three blocks with 2 convolutional layers, BatchNormalization, MaxPooling, and Dropout (0.4-0.6), followed by a 128-unit FC layer and a softmax layer. Convolutional layers in each block use 64, 128, and 256 filters of size 3x3. MaxPooling layers have 2x2 kernels. Training involves a batch size of 32 for 100 epochs. ELU activation and HeNormal kernel initializer are used. Callbacks include Early Stopping & ReduceLRonPlateau. The optimizer is Nadam, and the loss function is Categorical Cross-Entropy. 
 

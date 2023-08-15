@@ -74,67 +74,63 @@ The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Di
 <img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
 
 ### CNN Build Model and Model Summary
-> :rocket: **Alert!** Buckle up, because the training process for our model takes around *16.39 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor) 
-* Images reshaped to 48 x 48 and normalized before entering the first convolutional layer.
-* Data augmentation techniques (such as rotations, shifts, and flips) are employed to enhance the model's ability to generalize
-* Utilizes 6 convolutional layers. 
-* Includes Batch Normalization and Dropout Layers after each convolution layers, Early Stopping, and ReduceLROnPlateau callback to counter overfitting.
-* Feature maps from convolutional layers go through Exponential Linear Unit (ELU) activation function with HeNormal kernel initializer.
-* Output layer contains 7 units to classify the 7 emotion classes.
-* Output layer uses softmax activation function for probabilistic class outputs.
-* Loss function using categorical cross-entropy.
-* Batch size: 32, Epochs: 100.
-* Optimizer: Nesterov-accelerated Adaptive Moment Estimation (Nadam), which combines Adam and Nesterov Momentum.
+> :rocket: **Alert!** Buckle up, because the training process for our model takes around *6.37 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor)\
+
+Three blocks with 2 convolutional layers, BatchNormalization, MaxPooling, and Dropout (0.4-0.6), followed by a 128-unit FC layer and a softmax layer. Convolutional layers in each block use 64, 128, and 256 filters of size 3x3. MaxPooling layers have 2x2 kernels. Training involves a batch size of 32 for 100 epochs. ELU activation and HeNormal kernel initializer are used. Callbacks include Early Stopping & ReduceLRonPlateau. The optimizer is Nadam, and the loss function is Categorical Cross-Entropy. 
 
 <img width="667" alt="cnn visualization" src="https://github.com/ACM40960/project-22200226/assets/114998243/33c4698a-be55-4e8f-ae1a-425f94f514d0">
 
 
 
-![image](https://github.com/ACM40960/project-22200226/assets/114998243/d9ea45b0-c369-49d6-be73-110f55983187)
+<img width="283" alt="final_model" src="https://github.com/ACM40960/project-22200226/assets/114998243/218d2086-3230-49f5-8d00-f8f02e73a3ea">
 
 
 ### Model Evaluation
-1. **Training vs Validation Loss & Accuracy** - Progressively improving, the model reaches ~0.95 for loss and ~70% accuracy at around 60 to 70 epochs. However, beyond this, signs of overfitting start to emerge.
+1. **Training vs Validation Loss & Accuracy** - Gradually improving, and it stops at epoch 52 because of the Early Stopping callback. By that point, the training and validation accuracy are around 70%, and the training and loss accuracy are about 0.9.
 
 
-   <img width="792" alt="Screenshot 2023-08-13 at 13 53 49" src="https://github.com/ACM40960/project-22200226/assets/114998243/e43b91ea-6119-44f2-b533-688193873db4">
+<img width="806" alt="final_curve" src="https://github.com/ACM40960/project-22200226/assets/114998243/b03538fc-1c4a-4c94-bbbb-672c5966b0ef">
 
 
 
 2. **Normalized Confusion Matrix** - Model Evaluation on the Test Set\
-Disgust images frequently predicted as Anger. Notably, Happy demonstrated exceptional classification performance, with 787 accurate predictions across all images, the highest among all emotion categories.
+Disgust images frequently predicted as Anger. Notably, Happy demonstrated exceptional classification performance, with 801 accurate predictions across all images, the highest among all emotion categories.
 
 
-<img width="663" alt="Screenshot 2023-08-14 at 09 59 21" src="https://github.com/ACM40960/project-22200226/assets/114998243/5f897314-531e-459d-9ce0-f4d5f8f6050d">
+<img width="660" alt="final_confusion_matrix" src="https://github.com/ACM40960/project-22200226/assets/114998243/b328fd8a-9e48-4eff-97eb-c26db0652a4d">
+
 
 
 
 3. **Classification Report** - Model Evaluation on the Test Set
    
 
-| Classes       | Precision | Sensitivity (Recall) | Specificity | F1 Score | Accuracy |
+| Classes       | Precision | Sensitivity (Recall) | Specificity | F1-Score | Accuracy |
 | ------------- | --------- | -------------------- | ----------- | -------- | -------- |
-| 0 - Anger     | 0.570     | 0.658                | 0.921       | 0.611    | 0.885    |
-| 1 - Disgust   | 0.833     | 0.545                | 0.998       | 0.659    | 0.991    |
-| 2 - Fear      | 0.584     | 0.439                | 0.946       | 0.502    | 0.872    |
-| 3 - Happy     | 0.895     | 0.895                | 0.966       | 0.895    | 0.949    |
-| 4 - Sad       | 0.594     | 0.544                | 0.926       | 0.568    | 0.863    |
-| 5 - Surprise  | 0.799     | 0.767                | 0.975       | 0.783    | 0.951    |
-| 6 - Neutral   | 0.615     | 0.754                | 0.900       | 0.678    | 0.875    |
+| 0 - Angry     | 0.604     | 0.603                | 0.937       | 0.603    | 0.892    |
+| 1 - Disgust   | 0.719     | 0.418                | 0.997       | 0.529    | 0.989    |
+| 2 - Fear      | 0.563     | 0.405                | 0.946       | 0.471    | 0.866    |
+| 3 - Happy     | 0.877     | 0.911                | 0.959       | 0.894    | 0.947    |
+| 4 - Sad       | 0.529     | 0.598                | 0.894       | 0.561    | 0.845    |
+| 5 - Surprise  | 0.778     | 0.776                | 0.971       | 0.777    | 0.948    |
+| 6 - Neutral   | 0.635     | 0.698                | 0.915       | 0.665    | 0.877    |
 
-> **Overall Accuracy = 69.27%**
+
+> **Overall Accuracy = 68.24%**
 
 4. **One-VS-Rest Multiclass ROC** - Model Evaluation on the Test Set
 
-<img width="488" alt="Screenshot 2023-08-13 at 13 55 30" src="https://github.com/ACM40960/project-22200226/assets/114998243/56dead64-5f6d-4812-bf36-0e888fabcd49">
+<img width="480" alt="final_roc_auc" src="https://github.com/ACM40960/project-22200226/assets/114998243/93b2d5d3-e616-4c85-9bd1-170b7d203fa3">
+
+
 
 ### Conclusion
-The model's performance on the test set achieves an overall accuracy of approximately 69.3%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Sad". This is also true in real life – detecting the "Fear" emotion is not easy.
+The model's performance on the test set achieves an overall accuracy of approximately 68.24%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Sad". This is also true in real life – detecting the "Fear" emotion is not easy. However, it's also crucial to understand that the ROC curve might not be reliable in highly imbalanced datasets and can give an overly positive impression, which is the case in our situation. Therefore, the F1-score is the most suitable metric to depend on.
 
 ### Future Work
 Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities.
 
-*Additional Information: This dataset is employed in the context of a Kaggle Challenge, where the first winning entry achieved an accuracy of 71.16%, while this model attained an accuracy of **69.27%**.*
+*Additional Information: This dataset was used for a Kaggle Challenge. The top-performing solution reached 71.16% accuracy, while our model achieved 68.24% accuracy, placing us in 4th position.*
 
 ## Acknowledgments
 The facial emotion recognition algorithm was adapted from the following sources:

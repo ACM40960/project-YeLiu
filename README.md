@@ -129,6 +129,8 @@ Disgust images frequently predicted as Anger. Notably, Happy demonstrated except
 
 <img width="480" alt="final_roc_auc" src="https://github.com/ACM40960/project-22200226/assets/114998243/93b2d5d3-e616-4c85-9bd1-170b7d203fa3">
 
+*ROC curve misleads due to highly imbalance dataset.*
+
 5.  **One-VS-Rest Multiclass PR** - Model Evaluation on the Test Set
    
 <img width="454" alt="final_pr_curve" src="https://github.com/ACM40960/project-22200226/assets/114998243/da40a072-174a-41e7-8f13-7c401e54fef5">

@@ -14,17 +14,20 @@ The benefits of this project reach different areas. For example, in healthcare, 
 ## Getting Started - Instructions
 Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Jupyter Notebook (Anaconda). Let's go! 🚀😃
 
-Follow the [main file](fer_main.ipynb) for neural network training. Files Structure:
-- [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset, train the CNN, and analysis
+*Note - You can find a tutorial for downloading Python with Anaconda at this [link](https://docs.anaconda.com/free/anaconda/install/).*
+
+### Files Structure:
+- [fer_main.ipynb](fer_main.ipynb) - Main project file about the dataset, train the CNN, model evaluation, and analysis
 - [fer_webcam.ipynb](fer_webcam.ipynb) - Uses the pre-trained model to predict emotions via webcam
 - [haarcascade_frontalface_default](haarcascade_frontalface_default.xml) - Face detection algorithm
   (we obtain this from this [repository](https://github.com/opencv/opencv/tree/master/data/haarcascades))
 - [model_final.json](model_final.json) - Neural network architecture
 - [weights_final.h5](weights_final.h5) - Trained model weights
 - [requirements.txt](requirements.txt) - Version of each dependency
-- [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
 - CNN Visualization folder - Source code for generating visual representation of CNN architecture (created using LaTeX format)
 - [gitattributes](gitattributes) - Source code to upload large file more than 25mb to Github (to be ignored)
+- [Literature Review](literature_review.pdf) - Synopsis of Facial Emotion Recognition project
+- [Project Poster](Poster%20-%20FER%20using%20CNN.pdf) - Project Poster
 
 ## Prerequisites
 Install these prerequisites before proceeding:
@@ -73,7 +76,7 @@ For the real-time facial expression recognition, we employed the **Haar Cascade 
 The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Disgust' is minority. 
 <img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
 
-Below images are samples from the dataset:\
+Below are sample images from the dataset in each class:\
 <img width="497" alt="sample_images" src="https://github.com/ACM40960/project-22200226/assets/114998243/4da6df45-28cb-43bc-a9d5-57af433bcb86">
 
 

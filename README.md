@@ -73,6 +73,10 @@ For the real-time facial expression recognition, we employed the **Haar Cascade 
 The classes in the dataset show imbalance,  where 'Happy' is predominant and 'Disgust' is minority. 
 <img width="734" alt="Class Distribution" src="https://github.com/ACM40960/project-22200226/assets/114998243/d14b09d5-e6cc-4934-a508-219b02799d34">
 
+Below images are samples from the dataset:\
+<img width="497" alt="sample_images" src="https://github.com/ACM40960/project-22200226/assets/114998243/4da6df45-28cb-43bc-a9d5-57af433bcb86">
+
+
 ### CNN Build Model and Model Summary
 > :rocket: **Alert!** Buckle up, because the training process for our model takes around *6.37 hours*! :hourglass_flowing_sand: (We use a 1.4 GHz Quad-Core Intel Core i5 processor)
 
@@ -122,13 +126,16 @@ Disgust images frequently predicted as Anger. Notably, Happy demonstrated except
 
 <img width="480" alt="final_roc_auc" src="https://github.com/ACM40960/project-22200226/assets/114998243/93b2d5d3-e616-4c85-9bd1-170b7d203fa3">
 
+5.  **One-VS-Rest Multiclass PR** - Model Evaluation on the Test Set
+   
+<img width="454" alt="final_pr_curve" src="https://github.com/ACM40960/project-22200226/assets/114998243/da40a072-174a-41e7-8f13-7c401e54fef5">
 
 
 ### Conclusion
-The model's performance on the test set achieves an overall accuracy of approximately 68.24%. Given the class imbalance present, evaluating the model through metrics such as F1 score and ROC-AUC becomes more appropriate. Notably, both the F1 score and ROC-AUC give the highest score to the "Happy" class, while the "Fear" class has the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Sad". This is also true in real life – detecting the "Fear" emotion is not easy. However, it's also crucial to note that the ROC curve might not be reliable in highly imbalanced datasets and can give an overly positive impression, which is the case in our situation. Therefore, the F1-score is the most suitable metric to depend on.
+The model's performance on the test set achieves an overall accuracy of approximately 68.24%. Given the highly imbalanced class, evaluating the model through metrics such as F1-score and Precision-Recall (PR) curve become more appropriate as they focus on the positive class. Notably, we can see that negative emotions such as "Angry", "Disgust", "Fear", and "Sad" have lower F1-score and PR curve value than positive or neutral emotions with "Fear" having the lowest score. Looking at the images in the dataset again, it's tough for even people to tell the difference between "Fear" and other emotions like "Anger" or being "Sad" or to distinguish between "Disgust" and "Anger". This is also true in real life – detecting the negative emotion is challenging. 
 
 ### Future Work
-Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities.
+Exploring transfer learning methods with pre-trained models, facial landmark alignment, additional data augmentation, addressing class imbalance and expanding the dataset to include more varied examples could improve the model's classification capabilities. Additionally, to investigate human performance in emotion detection and compare it with the outcomes of the CNN model.
 
 *Additional Information: This dataset was used for a Kaggle Challenge. The top-performing solution reached 71.16% accuracy, while our model achieved 68.24% accuracy, placing us in 4th position.*
 

@@ -9,7 +9,7 @@
 ## Introduction
 In this project, we build a Convolutional Neural Network (CNN) model with the ability to categorize seven different emotional states in human faces: Anger, Disgust, Fear, Happy, Sad, Surprise, and Neutral. Furthermore, we put this model into practical use by integrating it with a webcam for real-time application.
 
-The benefits of this project reach different areas. For example, in healthcare, it can make it easier for people with Alexithymia to understand how others feel and to express their own emotions. It also has uses in public safety, education, jobs, and more.
+The benefits of this project reach different areas. For example, in healthcare, it can make it easier for people with Alexithymia to understand how others feel and to express their own emotions *(People with Alexithymia have difficulties recognizing and communicating their own emotions, and they also struggle to recognize and respond to emotions in others)*. It also has uses in public safety, education, jobs, and more.
 
 ## Getting Started - Instructions
 Get ready for fun! Follow instructions for real-time facial emotion recognition through your webcam, all done using Python in Jupyter Notebook (Anaconda). Let's go! 🚀😃
